@@ -37,20 +37,7 @@ class MassLandRecordsService {
     // Helper method to get available counties
     getAvailableCounties() {
         return [
-            'barnstable',
-            'berkshire',
-            'bristol',
-            'dukes',
-            'essex',
-            'franklin',
-            'hampden',
-            'hampshire',
-            'middlesex',
-            'nantucket',
-            'norfolk',
-            'plymouth',
-            'suffolk',
-            'worcester'
+            'franklin'
         ];
     }
 

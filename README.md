@@ -4,11 +4,12 @@ A web application for searching Massachusetts Land Records through automated scr
 
 ## Features
 
-- **County Selection**: Search across all 14 Massachusetts counties
+- **Franklin County Support**: Currently supporting Franklin County records (more counties to be added)
 - **Index Type Selection**: Choose from Grantor or Grantee records with specific date ranges (1663-1974)
 - **Last Name Search**: Find records by last name
-- **Results Display**: View search results in a formatted table
+- **Results Display**: View search results in a formatted table with Name, Book, Page, and other details
 - **Responsive Design**: Works on desktop and mobile devices
+- **Real-time Scraping**: Directly scrapes masslandrecords.com for up-to-date results
 
 ## Installation
 

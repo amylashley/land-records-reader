@@ -159,6 +159,84 @@ tr:hover {
     transition: transform 0.2s ease;
 }
 
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.radio-option:hover {
+    background-color: #f8f9fa;
+    border-color: #3498db;
+}
+
+.radio-option input[type="radio"] {
+    margin: 0;
+    width: 18px;
+    height: 18px;
+    accent-color: #3498db;
+}
+
+.radio-option label {
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.radio-option input[type="radio"]:checked + label {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.period-select {
+    transition: all 0.3s ease;
+}
+
+.period-select:disabled {
+    background-color: #f8f9fa;
+    opacity: 0.6;
+}
+
+.info-banner {
+    background-color: #e8f4f8;
+    border: 1px solid #bee5eb;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.info-banner p {
+    margin: 0;
+    color: #0c5460;
+}
+
+@media (max-width: 768px) {
+    .radio-group {
+        gap: 8px;
+    }
+    
+    .radio-option {
+        padding: 8px;
+    }
+    
+    .radio-option label {
+        font-size: 13px;
+    }
+}
+
 .btn:disabled {
     opacity: 0.6;
     cursor: not-allowed;

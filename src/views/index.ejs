@@ -9,26 +9,16 @@
 <body>
     <div class="container">
         <h1>Massachusetts Land Records Search</h1>
+        <div class="info-banner">
+            <p><strong>Note:</strong> Currently supporting Franklin County only. More counties will be added in the future.</p>
+        </div>
         <div class="search-form">
             <form action="/search" method="POST">
                 <div class="form-group">
                     <label for="county">County:</label>
                     <select name="county" id="county" class="form-control" required>
                         <option value="">Select County</option>
-                        <option value="barnstable">Barnstable</option>
-                        <option value="berkshire">Berkshire</option>
-                        <option value="bristol">Bristol</option>
-                        <option value="dukes">Dukes</option>
-                        <option value="essex">Essex</option>
                         <option value="franklin">Franklin</option>
-                        <option value="hampden">Hampden</option>
-                        <option value="hampshire">Hampshire</option>
-                        <option value="middlesex">Middlesex</option>
-                        <option value="nantucket">Nantucket</option>
-                        <option value="norfolk">Norfolk</option>
-                        <option value="plymouth">Plymouth</option>
-                        <option value="suffolk">Suffolk</option>
-                        <option value="worcester">Worcester</option>
                     </select>
                 </div>
 
@@ -38,39 +28,63 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="indexType">Index Type:</label>
-                    <select name="indexType" id="indexType" class="form-control" required>
-                        <option value="">Select Index Type</option>
-                        <option value="1663-1786 Grantors">1663-1786 Grantors</option>
-                        <option value="1787-1889 Grantors">1787-1889 Grantors</option>
-                        <option value="1890-1899 Grantors">1890-1899 Grantors</option>
-                        <option value="1900-1909 Grantors">1900-1909 Grantors</option>
-                        <option value="1910-1919 Grantors">1910-1919 Grantors</option>
-                        <option value="1920-1929 Grantors">1920-1929 Grantors</option>
-                        <option value="1930-1939 Grantors">1930-1939 Grantors</option>
-                        <option value="1940-1944 Grantors">1940-1944 Grantors</option>
-                        <option value="1945-1949 Grantors">1945-1949 Grantors</option>
-                        <option value="1950-1959 Grantors">1950-1959 Grantors</option>
-                        <option value="1960-1964 Grantors">1960-1964 Grantors</option>
-                        <option value="1965-1966 Grantors">1965-1966 Grantors</option>
-                        <option value="1967-1972 Grantors">1967-1972 Grantors</option>
-                        <option value="1973-1974 Grantors">1973-1974 Grantors</option>
-                        <option value="1663-1786 Grantees">1663-1786 Grantees</option>
-                        <option value="1787-1889 Grantees">1787-1889 Grantees</option>
-                        <option value="1890-1899 Grantees">1890-1899 Grantees</option>
-                        <option value="1900-1909 Grantees">1900-1909 Grantees</option>
-                        <option value="1910-1919 Grantees">1910-1919 Grantees</option>
-                        <option value="1920-1929 Grantees">1920-1929 Grantees</option>
-                        <option value="1930-1939 Grantees">1930-1939 Grantees</option>
-                        <option value="1940-1944 Grantees">1940-1944 Grantees</option>
-                        <option value="1945-1949 Grantees">1945-1949 Grantees</option>
-                        <option value="1950-1959 Grantees">1950-1959 Grantees</option>
-                        <option value="1960-1964 Grantees">1960-1964 Grantees</option>
-                        <option value="1965-1966 Grantees">1965-1966 Grantees</option>
-                        <option value="1967-1972 Grantees">1967-1972 Grantees</option>
-                        <option value="1973-1974 Grantees">1973-1974 Grantees</option>
+                    <label>Record Type:</label>
+                    <div class="radio-group">
+                        <div class="radio-option">
+                            <input type="radio" name="recordType" id="grantors" value="grantors" checked>
+                            <label for="grantors">Grantors (People selling/transferring property)</label>
+                        </div>
+                        <div class="radio-option">
+                            <input type="radio" name="recordType" id="grantees" value="grantees">
+                            <label for="grantees">Grantees (People receiving property)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group grantor-group">
+                    <label for="grantorPeriod">Grantor Time Period:</label>
+                    <select name="grantorPeriod" id="grantorPeriod" class="form-control period-select">
+                        <option value="">Select Time Period</option>
+                        <option value="1663-1786 Grantors">1663-1786</option>
+                        <option value="1787-1889 Grantors">1787-1889</option>
+                        <option value="1890-1899 Grantors">1890-1899</option>
+                        <option value="1900-1909 Grantors">1900-1909</option>
+                        <option value="1910-1919 Grantors">1910-1919</option>
+                        <option value="1920-1929 Grantors">1920-1929</option>
+                        <option value="1930-1939 Grantors">1930-1939</option>
+                        <option value="1940-1944 Grantors">1940-1944</option>
+                        <option value="1945-1949 Grantors">1945-1949</option>
+                        <option value="1950-1959 Grantors">1950-1959</option>
+                        <option value="1960-1964 Grantors">1960-1964</option>
+                        <option value="1965-1966 Grantors">1965-1966</option>
+                        <option value="1967-1972 Grantors">1967-1972</option>
+                        <option value="1973-1974 Grantors">1973-1974</option>
                     </select>
                 </div>
+
+                <div class="form-group grantee-group" style="display: none;">
+                    <label for="granteePeriod">Grantee Time Period:</label>
+                    <select name="granteePeriod" id="granteePeriod" class="form-control period-select">
+                        <option value="">Select Time Period</option>
+                        <option value="1663-1786 Grantees">1663-1786</option>
+                        <option value="1787-1889 Grantees">1787-1889</option>
+                        <option value="1890-1899 Grantees">1890-1899</option>
+                        <option value="1900-1909 Grantees">1900-1909</option>
+                        <option value="1910-1919 Grantees">1910-1919</option>
+                        <option value="1920-1929 Grantees">1920-1929</option>
+                        <option value="1930-1939 Grantees">1930-1939</option>
+                        <option value="1940-1944 Grantees">1940-1944</option>
+                        <option value="1945-1949 Grantees">1945-1949</option>
+                        <option value="1950-1959 Grantees">1950-1959</option>
+                        <option value="1960-1964 Grantees">1960-1964</option>
+                        <option value="1965-1966 Grantees">1965-1966</option>
+                        <option value="1967-1972 Grantees">1967-1972</option>
+                        <option value="1973-1974 Grantees">1973-1974</option>
+                    </select>
+                </div>
+
+                <!-- Hidden field to store the selected index type -->
+                <input type="hidden" name="indexType" id="indexType">
 
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Search Records</button>
