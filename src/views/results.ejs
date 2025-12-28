@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Mass Land Records</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results</h1>
+        
+        <div class="search-info">
+            <p><strong>County:</strong> <%= searchParams.county %></p>
+            <p><strong>Last Name:</strong> <%= searchParams.lastName %></p>
+            <p><strong>Index Type:</strong> <%= searchParams.indexType %></p>
+        </div>
+
+        <% if (error) { %>
+            <div class="error-message">
+                <h3>Error:</h3>
+                <p><%= error %></p>
+            </div>
+        <% } %>
+
+        <% if (results && results.length > 0) { %>
+            <div class="results-section">
+                <h2>Found <%= results.length %> records:</h2>
+                <div class="results-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Book</th>
+                                <th>Page</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% results.forEach(result => { %>
+                                <tr>
+                                    <td><%= result.name || 'N/A' %></td>
+                                    <td><%= result.book || 'N/A' %></td>
+                                    <td><%= result.page || 'N/A' %></td>
+                                    <td><%= result.date || 'N/A' %></td>
+                                    <td><%= result.description || 'N/A' %></td>
+                                </tr>
+                            <% }); %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <% } else if (!error) { %>
+            <div class="no-results">
+                <h3>No records found</h3>
+                <p>No records were found matching your search criteria.</p>
+            </div>
+        <% } %>
+
+        <div class="actions">
+            <a href="/" class="btn btn-secondary">New Search</a>
+        </div>
+    </div>
+</body>
+</html>
